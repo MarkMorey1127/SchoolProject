@@ -26,57 +26,59 @@ namespace SchoolProject.Controllers
         }
 
 
-        public IActionResult Index() // here's where we create the linq queries for the data ???
+        public IActionResult Index() //used the commented stuff to make dummy data for the db connection 
         {
-            Student testStudent = new Student();
-            //testStudent.StudentId = 101;
-            testStudent.GPA = 3.97;
-            testStudent.SchoolId = 1;
-            testStudent.StudentName = "Mark Morey";
+            //Student testStudent = new Student();
+            ////testStudent.StudentId = 101;
+            //testStudent.GPA = 3.97;
+            //testStudent.SchoolId = 1;
+            //testStudent.StudentName = "Mark Morey";
 
 
+            ////dbContext.SaveChanges();
+
+            //School testSchool = new School();
+            ////testSchool.SchoolId = 10001;
+            //testSchool.SchoolName = "University of SOuth Florida";
+            //testSchool.State = "Florida";
+            //testSchool.Street = "4202 E Fowler Ave";
+            //testSchool.City = "Tampa";
+            //testSchool.County = "Hillsborough";
+            //testSchool.ZipCode = 33620;
+
+
+            //dbContext.Students.Add(testStudent);
+            //dbContext.Schools.Add(testSchool);
             //dbContext.SaveChanges();
 
-            School testSchool = new School();
-            //testSchool.SchoolId = 10001;
-            testSchool.SchoolName = "University of SOuth Florida";
-            testSchool.State = "Florida";
-            testSchool.Street = "4202 E Fowler Ave";
-            testSchool.City = "Tampa";
-            testSchool.County = "Hillsborough";
-            testSchool.ZipCode = 33620;
-
-
-            dbContext.Students.Add(testStudent);
-            dbContext.Schools.Add(testSchool);
-            dbContext.SaveChanges();
+            
 
             return View();
 
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
+        //public IActionResult Privacy() //not using bc was put here by default
+        //{
+        //    return View();
+        //}
         //// was put here by default
 
 
-        //shows all students
-        public IActionResult StudentView()
-        {
-            var studentData = dbContext.Students.ToList();
+        //shows all students, not using because created another controller
+        //public IActionResult StudentView()
+        //{
+        //    var studentData = dbContext.Students.ToList();
 
-            return View(studentData);
+        //    return View(studentData);
 
-        }
+        //}
 
-        public IActionResult SchoolView()
-        {
-            var schoolData = dbContext.Schools.ToList();
+        //public IActionResult SchoolView()
+        //{
+        //    var schoolData = dbContext.Schools.ToList();
 
-            return View(schoolData);
-        }
+        //    return View(schoolData);
+        //}
 
 
 
