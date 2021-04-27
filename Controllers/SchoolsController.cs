@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using SchoolProject.Data_Access;
 using SchoolProject.Models;
+using System.Net.Http;
+using Newtonsoft.Json;
 
 namespace SchoolProject.Controllers
 {
@@ -19,9 +21,12 @@ namespace SchoolProject.Controllers
             _context = context;
         }
 
+
         // GET: Schools
         public async Task<IActionResult> Index()
         {
+        
+
             return View(await _context.Schools.ToListAsync());
         }
 
@@ -149,5 +154,7 @@ namespace SchoolProject.Controllers
         {
             return _context.Schools.Any(e => e.SchoolId == id);
         }
+
+
     }
 }
